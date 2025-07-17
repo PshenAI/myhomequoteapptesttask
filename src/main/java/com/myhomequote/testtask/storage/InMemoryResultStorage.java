@@ -28,7 +28,7 @@ public class InMemoryResultStorage {
         NavigableSet<UserLevelResult> levelSet = levelTopResults.get(levelId);
 
         // Remove old if exists
-        levelSet.remove(new UserLevelResult(userId, levelId, 0));
+        levelSet.removeIf(userLevelResult -> userLevelResult.getUserId() == userId && userLevelResult.getLevelId() == levelId);
         levelSet.add(new UserLevelResult(userId, levelId, result));
 
         // Maintain only top 20
