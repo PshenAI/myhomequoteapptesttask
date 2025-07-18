@@ -19,7 +19,7 @@ public class ResultService {
 
     public void setInfo(SetInfoRequest request) {
         store.updateResult(request.getUserId(), request.getLevelId(), request.getResult());
-        log.info("Users: {}, Level: {}, Result: {}. Data's successfully stored", request.getUserId(),
+        log.info("User: {}, Level: {}, Result: {}. Data's successfully stored", request.getUserId(),
                 request.getLevelId(), request.getResult());
     }
 
